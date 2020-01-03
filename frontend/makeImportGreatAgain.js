@@ -19,7 +19,7 @@ const debounce = (func, wait, immediate) => {
 	};
 };
 
-readDir = (dir, level) => {
+const readDir = (dir, level) => {
     return fs.readdirSync(dir).map((fn) => {
         const fp = path.join(dir,fn);
         const fpStat = fs.statSync(fp)
@@ -63,7 +63,6 @@ const makeImportGreatAgainDebounced = debounce((dir)=>makeImportGreatAgain(dir),
 // initial fixes
 makeImportGreatAgainDebounced(rootDir);
 makeImportGreatAgainDebounced(preactFiles);
-
 
 fs.watch(rootDir, {persistent: true, recursive: true}, (event, filename) => {
     //console.log("------>",filename);
