@@ -1,11 +1,14 @@
 import http from "http";
 import express from "express";
-
-const router = express();
-const { PORT = 3000 } = process.env;
-const server = http.createServer(router);
+import subscriberInfo from "./routes/subscriberRoute.js"
+import apiInfo from "./routes/defaultRoute.js"
 
 
-server.listen(PORT, () =>
-  console.log(`Server is running http://localhost:${PORT}...`)
-);
+const app = express();
+const port = 3000;
+
+const router = express.Router();
+
+//app.get('/', (req, res) => res.send('Hello World!'));
+app.use("/", [subscriberInfo(router), apiInfo(router)]);
+app.listen(port, () => console.log(`Server started listening to port ${port}`));
