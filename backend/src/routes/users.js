@@ -1,9 +1,12 @@
-import getUserInfo from "../middlewares/user.js";
-const userInfo = (router) => {
-    return router.get("/lakelandcup/api/v1.0/subscriber/info", getUserInfo);
+import { findUser, findUsers } from "../middlewares/user.js";
+const getUser = (router) => {
+    return router.get("/lakelandcup/api/v1.0/user/:username", findUser);
+};
+const getUsers = (router) => {
+    return router.get("/lakelandcup/api/v1.0/user/users", findUsers);
 };
 const auth = (router) => {
-    return router.get("/lakelandcup/api/v1.0/subscriber/auth", getUserInfo);
+    return router.get("/lakelandcup/api/v1.0/user/auth", getUser);
 };
-export { userInfo };
-export default userInfo;
+export { getUser, getUsers };
+export default getUser;

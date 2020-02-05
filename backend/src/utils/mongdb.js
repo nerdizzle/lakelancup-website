@@ -1,12 +1,23 @@
 import mongoose from "mongoose";
-function connectDb(config) {
-    const uri = "mongodb://" + config.server + ":" + config.port + "/" + config.db;
-    mongoose.connect(uri, { useNewUrlParser: true }).then(() => {
-        console.log('Successful database connection to ' + uri + " ");
-    }).catch(err => {
-        console.error('Database connection error');
-    });
+export const makeMongoDbUri = (config) => {
+    return "mongodb://" + config.server + ":" + config.port + "/" + config.dbName;
+};
+// make singelton class
+export class MongoDb {
+    constructor() { ; }
+    static getInstance() {
+        if (!MongoDb.instance) {
+            MongoDb.instance = new MongoDb();
+        }
+        return MongoDb.instance;
+    }
+    async connect(config) {
+        console.log(makeMongoDbUri(config));
+        await mongoose.connect(makeMongoDbUri(config), { useNewUrlParser: true, useUnifiedTopology: true });
+        return mongoose.connection;
+    }
+    async disconnect() {
+        await mongoose.disconnect();
+    }
 }
-;
-export { connectDb };
-export default connectDb;
+export default MongoDb;

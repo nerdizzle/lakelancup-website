@@ -1,12 +1,16 @@
 import { Router } from "express"
-import getUserInfo from "../middlewares/user"
+import {findUser, findUsers} from "../middlewares/user"
 
-const userInfo = (router: Router) => {
-    return router.get("/lakelandcup/api/v1.0/subscriber/info", getUserInfo)
+const getUser = (router: Router) => {
+    return router.get("/lakelandcup/api/v1.0/user/:username", findUser)
+};
+
+const getUsers = (router: Router) => {
+    return router.get("/lakelandcup/api/v1.0/user/users", findUsers)
 };
 
 const auth = (router: Router) => {
-    return router.get("/lakelandcup/api/v1.0/subscriber/auth", getUserInfo)
+    return router.get("/lakelandcup/api/v1.0/user/auth", getUser)
 };
-export {userInfo};
-export default userInfo;
+export {getUser, getUsers};
+export default getUser;

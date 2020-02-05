@@ -1,7 +1,15 @@
-import {Request, Response} from "express"
+import {Request, Response} from "express";
+import User from "../schemas/user";
 
-const getUserInfo = async (req: Request, res: Response) => {
-    res.send('subscriber info!')
+const findUser = async (req: Request, res: Response) => {  
+    //const result = await User.find({});
+    console.log(req.params)
+    res.send(req.params.username);
 };
-export {getUserInfo};
-export default getUserInfo;
+
+const findUsers = async (req: Request, res: Response) => {  
+    const result = await User.find({});
+    res.send(result);
+};
+export {findUser, findUsers};
+export default findUser;

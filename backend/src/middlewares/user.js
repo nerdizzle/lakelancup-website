@@ -1,5 +1,12 @@
-const getUserInfo = async (req, res) => {
-    res.send('subscriber info!');
+import User from "../schemas/user.js";
+const findUser = async (req, res) => {
+    //const result = await User.find({});
+    console.log(req.params);
+    res.send(req.params.username);
 };
-export { getUserInfo };
-export default getUserInfo;
+const findUsers = async (req, res) => {
+    const result = await User.find({});
+    res.send(result);
+};
+export { findUser, findUsers };
+export default findUser;
