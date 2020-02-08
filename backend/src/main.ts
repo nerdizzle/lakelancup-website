@@ -30,6 +30,6 @@ const router = express.Router();
 
 //connectToMongo({server: mdbServer, port: mdbPport, dbName: mdb});
 //app.get('/', (req, res) => res.send('Hello World!'));
-
+app.use("/", userInfo(router));
 app.use("/", userInfo(router));
 app.listen(port, () => console.log(`Server started listening to port ${port}`));
