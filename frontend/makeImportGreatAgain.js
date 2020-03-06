@@ -57,12 +57,14 @@ const makeImportGreatAgain = (dir) => {
 
 const rootDir = './public/js/src';
 const preactFiles = './public/js/contrib/node_modules/preact/src'
+const preactRouterFiles = './public/js/contrib/node_modules/preact-router/src'
 
 const makeImportGreatAgainDebounced = debounce((dir)=>makeImportGreatAgain(dir),1000);
 
 // initial fixes
 makeImportGreatAgainDebounced(rootDir);
 makeImportGreatAgainDebounced(preactFiles);
+makeImportGreatAgainDebounced(preactRouterFiles);
 
 fs.watch(rootDir, {persistent: true, recursive: true}, (event, filename) => {
     //console.log("------>",filename);

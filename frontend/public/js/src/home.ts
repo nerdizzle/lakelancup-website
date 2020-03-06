@@ -1,6 +1,6 @@
 import { h, Component, render } from '../contrib/node_modules/preact/src/index';
 
-class Players extends Component {
+class Home extends Component {
     constructor(props){
         super(props);
         
@@ -16,5 +16,5 @@ class Players extends Component {
     }
 }
 
-export default Players;
-export {Players};
+export default Home;
+export {Home};

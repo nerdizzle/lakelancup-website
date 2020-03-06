@@ -1,5 +1,5 @@
 import { h, Component } from '../contrib/node_modules/preact/src/index.js';
-class Players extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
     }
@@ -7,5 +7,5 @@ class Players extends Component {
         return (h("div", { id: "app" }, h("div", { class: "lakelandcup-container" })));
     }
 }
-export default Players;
-export { Players };
+export default Home;
+export { Home };
