@@ -1,0 +1,45 @@
+{
+    "franchise": {
+        "name": "Illinois Ice Crackers",
+        "foundationYear": 2010,
+        "championships": [],
+        "owner": {
+            "firstName": "Max",
+            "secondName": "Muster",
+            "emailAddress": "max.muster@gmail.com"
+        },
+        "prospects": [
+            {
+                "firstName":"Vitali",
+                "secondName":"Kravtsov",
+                "pick":{
+                    "round": 1,
+                    "pickInRound": 11,
+                    "pickOverall": 11,
+                    "originFranchise": "Illinois Ice Crackers"
+                }
+            },
+            {
+                "firstName":"Vasili",
+                "secondName":"Podkolzin",
+                "pick":{
+                    "year": 2019,
+                    "round": 1,
+                    "pickInRound": 10,
+                    "pickOverall": 10,
+                    "originFranchise": "Drunken Monkeys"
+                }
+            },
+            {
+                "firstName":"Ville",
+                "secondName":"Heinola",
+                "pick":{
+                    "round": 2,
+                    "pickInRound": 11,
+                    "pickOverall": 22,
+                    "originFranchise": "Drunken Monkeys"
+                }
+            }
+        ]}
+
+}
