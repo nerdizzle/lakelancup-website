@@ -42,6 +42,23 @@
                     "originFranchise": "Drunken Monkeys"
                 }
             }
-        ]}
+        ]
+    }, 
+    "picks": [
+        {
+            "year": 2020,
+            "round": 1,
+            "pickInRound": null,
+            "pickOverall": null,
+            "originFranchise": "Drunken Monkeys"
+        },
+        {
+            "year": 2020,
+            "round": 2,
+            "pickInRound": null,
+            "pickOverall": null,
+            "originFranchise": "Drunken Monkeys"
+        }
+    ]
 
 }

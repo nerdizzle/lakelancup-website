@@ -14,7 +14,7 @@ const app = express();
 const port = 3000;
 
 const db = MongoDb.getInstance();
-//console.log(db.getDb());
+
 db.connect({server: mdbServer, port: mdbPport, dbName: mdb}).then((db)=>{
     console.log("connected to mongodb..");
     const testPerson = {

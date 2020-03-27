@@ -19,5 +19,4 @@ const makeRequest = (xhr, body) => {
         }
     });
 };
-
 export default makeRequest;
