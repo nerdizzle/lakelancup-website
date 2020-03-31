@@ -4,6 +4,7 @@ import Home from './home.js';
 import Players from './players.js';
 import Franchises from './franchises.js';
 import Login from './login.js';
+import SignUp from './signup.js';
 const heroStyle = {
     "margin-left": "auto",
     "margin-right": "auto",
@@ -21,7 +22,7 @@ const imageStyle = {
 };
 class App extends Component {
     render(props, state) {
-        return (h("div", { id: "app" }, h("div", { class: "container", style: heroStyle }, h("a", { href: "/", onClick: () => { } }, h("img", { src: "./logo.png", width: "250", height: "250", style: imageStyle }, null))), h("header", { class: "navbar lakelandcup-navbar" }, h("section", { class: "navbar-section" }, null), h("section", { class: "navbar-center" }, h("a", { class: "btn btn-link text-dark", href: "/franchises" }, "Franchises"), h("a", { class: "btn btn-link text-dark", href: "/players" }, "Players"), h("a", { class: "btn btn-link text-dark", href: "/login" }, "Login")), h("section", { class: "navbar-section" }, null)), h("div", { class: "lakelandcup-navbar-spacer" }, null), h(Router, {}, h(Home, { path: "/" }, null), h(Franchises, { path: "/franchises" }, null), h(Players, { path: "/players" }, null), h(Login, { path: "/login" }, null))));
+        return (h("div", { id: "app" }, h("div", { class: "container", style: heroStyle }, h("a", { href: "/", onClick: () => { } }, h("img", { src: "./logo.png", width: "250", height: "250", style: imageStyle }, null))), h("header", { class: "navbar lakelandcup-navbar" }, h("section", { class: "navbar-section" }, null), h("section", { class: "navbar-center" }, h("a", { class: "btn btn-link text-dark", href: "/franchises" }, "Franchises"), h("a", { class: "btn btn-link text-dark", href: "/players" }, "Players"), h("a", { class: "btn btn-link text-dark", href: "/login" }, "Login")), h("section", { class: "navbar-section" }, null)), h("div", { class: "lakelandcup-navbar-spacer" }, null), h(Router, {}, h(Home, { path: "/" }, null), h(Franchises, { path: "/franchises" }, null), h(Players, { path: "/players" }, null), h(Login, { path: "/login" }, null), h(SignUp, { path: "/signup" }, null))));
     }
 }
 render(h(App, null), document.body);

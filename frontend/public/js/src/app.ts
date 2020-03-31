@@ -5,6 +5,7 @@ import Home from './home';
 import Players from './players';
 import Franchises from './franchises';
 import Login from './login';
+import SignUp from './signup';
 
 const heroStyle = {
   "margin-left":"auto",
@@ -45,7 +46,9 @@ class App extends Component {
           h(Home, {path:"/"}, null),
           h(Franchises, {path:"/franchises"}, null),
           h(Players, {path:"/players"}, null),
-          h(Login, {path:"/login"}, null)
+          h(Login, {path:"/login"}, null),
+          h(SignUp, {path:"/signup"}, null),
+
         )
       )
     );

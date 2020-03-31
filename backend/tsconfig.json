@@ -10,7 +10,8 @@
                 "es2019.array", "es2019.object", "es2019.string", "es2019.symbol", "es2020.string", "es2020.symbol.wellknown", "esnext.asynciterable",
                 "esnext.array", "esnext.bigint", "esnext.intl", "esnext.symbol" ], /* Specify library files to be included in the compilation. */
       //"sourceMap": true,                     /* Generates corresponding '.map' file. */
-      "types": []
+      "types": ["node"],
+      "moduleResolution": "node"
     },
     "exclude": ["node_modules"],
     "compileOnSave": true,
