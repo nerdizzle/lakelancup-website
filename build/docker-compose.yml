@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  lakelandcup-server:
+    build: 
+      context: ../frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80 
+    container_name: lakelandcup-server
+
+  lakelandcup-backend:
+    container_name: lakelandcup-backend
+    build:
+      context: ../backend/
+      dockerfile: Dockerfile
+    ports:
+      - 5001:5001
+    links:
+      - lakelandcup-db
+
+  lakelandcup-db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    container_name: lakelandcup-db
+    volumes:
+      - /Users/pygmalion/data:/data/db
+  
+  
+  

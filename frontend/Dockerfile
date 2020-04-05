@@ -1,17 +1,9 @@
-FROM node:13.7
+FROM nginx:alpine
 
-RUN mkdir -p /home/node/frontend/node_modules && chown -R node:node /home/node/frontend
+COPY mime.types /etc/nginx/mime.types
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY public/ /usr/share/nginx/html/
 
-WORKDIR /home/node/frontend
+EXPOSE 80
 
-COPY package*.json ./
-
-USER node
-
-RUN npm install
-
-COPY --chown=node:node . .
-
-EXPOSE 8080
-
-CMD [ "node", "serve.js" ]
+CMD ["nginx", "-g", "daemon off;"]

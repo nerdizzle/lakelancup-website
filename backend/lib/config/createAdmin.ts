@@ -37,7 +37,7 @@ export const genSalt = async (saltRounds : Number) : Promise<ISaltOutput> =>  {
 }
   
 // hash the password with the salt
-export const genHash =  async (input : IHashInput)  : Promise<IHashOutput>=> {
+export const genHash =  async (input : IHashInput) : Promise<IHashOutput>=> {
     return new Promise((resolve, reject) => {
         bcrypt.hash(input.password, input.salt, function(err, hash) {
             if (err) {
